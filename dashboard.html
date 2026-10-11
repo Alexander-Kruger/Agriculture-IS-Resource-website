@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_dashboard" name="shell-type" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,300..800;1,6..12,300..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#c8e8d0",
+              "on-tertiary-fixed-variant": "#554020",
+              "inverse-on-surface": "#f5f0e8",
+              "on-primary-fixed": "#002110",
+              "surface-container-low": "#f5f1ea",
+              "inverse-primary": "#8ecf9e",
+              "on-secondary-fixed-variant": "#4a4538",
+              "surface-tint": "#4a7c59",
+              "on-primary": "#ffffff",
+              "on-secondary": "#ffffff",
+              primary: "#4a7c59",
+              "on-surface-variant": "#4a4e4a",
+              "primary-container": "#78a886",
+              "on-primary-container": "#d8f0de",
+              "surface-dim": "#dbd7cf",
+              secondary: "#6b6358",
+              "surface-container-high": "#eae6de",
+              tertiary: "#705c30",
+              "surface-variant": "#e4e0d8",
+              "on-primary-fixed-variant": "#2a6038",
+              "primary-fixed-dim": "#8ecf9e",
+              "inverse-surface": "#2e3230",
+              "on-background": "#2e3230",
+              "secondary-container": "#f0e8db",
+              "secondary-fixed": "#f0e8db",
+              background: "#faf6f0",
+              "tertiary-container": "#c4a66a",
+              "tertiary-fixed": "#f8e0a8",
+              "surface-container-lowest": "#ffffff",
+              outline: "#74796e",
+              "on-secondary-fixed": "#1e1a13",
+              "on-error-container": "#690005",
+              "on-error": "#ffffff",
+              "error-container": "#ffdad8",
+              "on-tertiary": "#ffffff",
+              "surface-container": "#f0ece4",
+              "on-tertiary-fixed": "#221a05",
+              "tertiary-fixed-dim": "#dcc48e",
+              "on-tertiary-container": "#554020",
+              "secondary-fixed-dim": "#d4ccbf",
+              "surface-container-highest": "#e4e0d8",
+              "on-secondary-container": "#5e5548",
+              surface: "#faf6f0",
+              "on-surface": "#2e3230",
+              "surface-bright": "#faf6f0",
+              "outline-variant": "#c4c8bc",
+              error: "#b83230",
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+            spacing: {},
+            fontFamily: {
+              headline: ["Literata"],
+              display: ["Literata"],
+              body: ["Nunito Sans"],
+              label: ["Nunito Sans"],
+            },
+            fontSize: {},
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-surface font-body text-on-surface antialiased">
+    <div class="">
+      <header
+        class="fixed top-0 left-0 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(46,50,48,0.04)] z-40 flex items-center justify-between px-8"
+      >
+        <div class="flex items-center gap-4">
+          <div
+            class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-on-primary"
+          >
+            <span class="material-symbols-outlined text-xl"
+              >psychology_alt</span
+            >
+          </div>
+          <div>
+            <span
+              class="font-headline font-bold text-base tracking-tight text-on-surface block leading-tight"
+              >Enterprise Resource Planning</span
+            ><span
+              class="font-label text-xs uppercase tracking-wider text-tertiary font-bold"
+              >AGRICULTURAL KNOWLEDGE HUB</span
+            >
+          </div>
+        </div>
+        <nav
+          class="hidden lg:flex items-center gap-2"
+          data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg px-3.5 py-2"
+        >
+          <a
+            aria-current="page"
+            class="text-sm font-label text-on-surface-variant hover:text-on-surface px-3 py-2 rounded-lg transition-colors"
+            data-path="home"
+            href="index.html"
+            >Home</a
+          ><a
+            class="text-sm font-label text-on-surface-variant hover:text-on-surface px-3 py-2 rounded-lg transition-colors"
+            data-path="supply-chain-integration"
+            href="supply_chain.html"
+            >Supply Chain Integration</a
+          ><a
+            class="text-sm font-label text-on-surface-variant hover:text-on-surface px-3 py-2 rounded-lg transition-colors"
+            data-path="ai-and-dss"
+            href="ai_dss.html"
+            >AI and DSS</a
+          ><a
+            class="transition-colors bg-primary-container text-on-primary font-bold rounded-lg px-3.5 py-2"
+            data-path="farmer-analytics-dashboard"
+            href="dashboard.html"
+            >Farmer Analytics Dashboard</a
+          ><a
+            class="text-sm font-label text-on-surface-variant hover:text-on-surface px-3 py-2 rounded-lg transition-colors"
+            data-path="data-ethics-popia"
+            href="data_ethics.html"
+            >Data Ethics &amp; POPIA</a
+          >
+        </nav>
+      </header>
+      <main
+        class="relative pt-16 bg-surface w-full px-8 py-8 min-h-screen flex-1"
+      >
+        <div class="flex flex-col w-full">
+          <div class="relative w-full pb-10 space-y-8">
+            <div
+              class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2"
+            >
+              <div class="space-y-2">
+                <div
+                  class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container text-tertiary text-xs font-semibold uppercase tracking-wider"
+                >
+                  <span
+                    class="w-2 h-2 rounded-full bg-primary animate-pulse"
+                  ></span>
+                  Telemetry Synced: Real-Time Looker Feed
+                </div>
+                <h1
+                  class="font-headline text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-on-surface"
+                >
+                  Farmer Summary Analytics Dashboard
+                </h1>
+                <p
+                  class="font-body text-base md:text-lg text-on-surface-variant max-w-3xl leading-relaxed"
+                >
+                  Live Decision Support System &amp; Agricultural Operations
+                  Tracking
+                </p>
+              </div>
+              <div class="flex items-center gap-3">
+                <button
+                  class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-high hover:bg-surface-dim text-on-surface text-sm font-semibold transition-all shadow-sm"
+                  id="refreshFeedBtn"
+                >
+                  <span class="material-symbols-outlined text-lg">sync</span>
+                  Sync Nodes
+                </button>
+                <button
+                  class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary hover:bg-primary/90 text-on-primary text-sm font-semibold transition-all shadow-sm"
+                  id="exportCsvBtn"
+                >
+                  <span class="material-symbols-outlined text-lg"
+                    >download</span
+                  >
+                  Export Report
+                </button>
+              </div>
+            </div>
+            <!-- Interactive Filter Strip -->
+            <div
+              class="p-4 rounded-xl bg-surface-container shadow-sm flex flex-wrap items-center justify-between gap-4"
+            >
+              <div class="flex flex-wrap items-center gap-3">
+                <span
+                  class="text-xs font-label uppercase tracking-widest text-secondary font-bold flex items-center gap-1.5 pl-1"
+                >
+                  <span class="material-symbols-outlined text-base text-primary"
+                    >filter_list</span
+                  >
+                  Active Facets:
+                </span>
+                <div class="relative">
+                  <select
+                    class="appearance-none bg-surface-container-lowest text-on-surface text-xs font-semibold px-4 py-2 pr-8 rounded-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/40 shadow-sm"
+                  >
+                    <option>Region: All Western &amp; Eastern Cape Hubs</option>
+                    <option>Boland Valley Cluster</option>
+                    <option>Overberg Grain &amp; Citrus</option>
+                    <option>Limpopo Valley Belt</option>
+                  </select>
+                  <span
+                    class="material-symbols-outlined text-sm text-secondary absolute right-2.5 top-2.5 pointer-events-none"
+                    >expand_more</span
+                  >
+                </div>
+                <div class="relative">
+                  <select
+                    class="appearance-none bg-surface-container-lowest text-on-surface text-xs font-semibold px-4 py-2 pr-8 rounded-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/40 shadow-sm"
+                  >
+                    <option>Crop Type: Organic Macadamia &amp; Citrus</option>
+                    <option>Hass Avocado Tier-1</option>
+                    <option>Valencia Citrus Exotics</option>
+                    <option>Rooibos Tea Harvest</option>
+                  </select>
+                  <span
+                    class="material-symbols-outlined text-sm text-secondary absolute right-2.5 top-2.5 pointer-events-none"
+                    >expand_more</span
+                  >
+                </div>
+                <div class="relative">
+                  <select
+                    class="appearance-none bg-surface-container-lowest text-on-surface text-xs font-semibold px-4 py-2 pr-8 rounded-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/40 shadow-sm"
+                  >
+                    <option>Date Range: Current Quarter (Q3-Q4 Live)</option>
+                    <option>Year-to-Date Performance</option>
+                    <option>Trailing 30 Rolling Days</option>
+                  </select>
+                  <span
+                    class="material-symbols-outlined text-sm text-secondary absolute right-2.5 top-2.5 pointer-events-none"
+                    >calendar_today</span
+                  >
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-2 text-xs font-body text-secondary pl-2"
+              >
+                <span class="w-2 h-2 rounded-full bg-primary"></span>
+                <span class=""
+                  >Telemetry freshness:
+                  <strong class="text-on-surface">3 mins ago</strong></span
+                >
+              </div>
+            </div>
+            <!-- Core KPI Stat Cards Bento -->
+            <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4">
+              <div
+                class="p-5 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between transition-transform hover:-translate-y-0.5"
+              >
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-xs font-label uppercase tracking-wider text-secondary font-semibold"
+                    >Total Yield</span
+                  >
+                  <div
+                    class="w-7 h-7 rounded-lg bg-primary-fixed flex items-center justify-center text-on-primary-fixed"
+                  >
+                    <span class="material-symbols-outlined text-base"
+                      >grass</span
+                    >
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <div class="font-headline text-3xl font-bold text-on-surface">
+                    228.8K
+                  </div>
+                  <p class="text-xs text-on-surface-variant mt-1 font-body">
+                    Kilograms logged
+                  </p>
+                </div>
+                <div
+                  class="mt-3 flex items-center gap-1.5 text-xs text-primary font-bold"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >trending_up</span
+                  >
+                  <span class="">+9.4% vs target</span>
+                </div>
+              </div>
+              <div
+                class="p-5 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between transition-transform hover:-translate-y-0.5"
+              >
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-xs font-label uppercase tracking-wider text-secondary font-semibold"
+                    >Total Processed</span
+                  >
+                  <div
+                    class="w-7 h-7 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container"
+                  >
+                    <span class="material-symbols-outlined text-base"
+                      >precision_manufacturing</span
+                    >
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <div class="font-headline text-3xl font-bold text-on-surface">
+                    215.3K
+                  </div>
+                  <p class="text-xs text-on-surface-variant mt-1 font-body">
+                    Kilograms graded
+                  </p>
+                </div>
+                <div
+                  class="mt-3 flex items-center gap-1.5 text-xs text-secondary font-medium"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >done_all</span
+                  >
+                  <span class="">94.1% pipeline run</span>
+                </div>
+              </div>
+              <div
+                class="p-5 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between transition-transform hover:-translate-y-0.5"
+              >
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-xs font-label uppercase tracking-wider text-secondary font-semibold"
+                    >Transit Spoilage</span
+                  >
+                  <div
+                    class="w-7 h-7 rounded-lg bg-error-container flex items-center justify-center text-on-error-container"
+                  >
+                    <span class="material-symbols-outlined text-base"
+                      >warning</span
+                    >
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <div class="font-headline text-3xl font-bold text-error">
+                    13.5K
+                  </div>
+                  <p class="text-xs text-on-surface-variant mt-1 font-body">
+                    Kilograms lost
+                  </p>
+                </div>
+                <div
+                  class="mt-3 flex items-center gap-1.5 text-xs text-error font-bold"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >arrow_upward</span
+                  >
+                  <span class="">5.9% total yield rate</span>
+                </div>
+              </div>
+              <div
+                class="p-5 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between transition-transform hover:-translate-y-0.5"
+              >
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-xs font-label uppercase tracking-wider text-secondary font-semibold"
+                    >Gross Revenue</span
+                  >
+                  <div
+                    class="w-7 h-7 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed"
+                  >
+                    <span class="material-symbols-outlined text-base"
+                      >payments</span
+                    >
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <div class="font-headline text-3xl font-bold text-tertiary">
+                    12.6M
+                  </div>
+                  <p class="text-xs text-on-surface-variant mt-1 font-body">
+                    ZAR realized
+                  </p>
+                </div>
+                <div
+                  class="mt-3 flex items-center gap-1.5 text-xs text-tertiary font-bold"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >show_chart</span
+                  >
+                  <span class="">ZAR 58.5 / kg avg</span>
+                </div>
+              </div>
+              <div
+                class="p-5 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between transition-transform hover:-translate-y-0.5"
+              >
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-xs font-label uppercase tracking-wider text-secondary font-semibold"
+                    >Farmers Active</span
+                  >
+                  <div
+                    class="w-7 h-7 rounded-lg bg-primary-fixed-dim flex items-center justify-center text-on-primary-fixed-variant"
+                  >
+                    <span class="material-symbols-outlined text-base"
+                      >groups</span
+                    >
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <div class="font-headline text-3xl font-bold text-on-surface">
+                    30.0
+                  </div>
+                  <p class="text-xs text-on-surface-variant mt-1 font-body">
+                    Participating growers
+                  </p>
+                </div>
+                <div
+                  class="mt-3 flex items-center gap-1.5 text-xs text-primary font-medium"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >verified_user</span
+                  >
+                  <span class="">100% compliant ERP</span>
+                </div>
+              </div>
+              <div
+                class="p-5 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between transition-transform hover:-translate-y-0.5"
+              >
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-xs font-label uppercase tracking-wider text-secondary font-semibold"
+                    >Tracked Batches</span
+                  >
+                  <div
+                    class="w-7 h-7 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed"
+                  >
+                    <span class="material-symbols-outlined text-base"
+                      >inventory_2</span
+                    >
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <div class="font-headline text-3xl font-bold text-on-surface">
+                    120.0
+                  </div>
+                  <p class="text-xs text-on-surface-variant mt-1 font-body">
+                    Dispatched consignments
+                  </p>
+                </div>
+                <div
+                  class="mt-3 flex items-center gap-1.5 text-xs text-secondary font-medium"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >schedule</span
+                  >
+                  <span class="">1.8K kg avg parcel</span>
+                </div>
+              </div>
+            </div>
+            <!-- Integrated Intelligence Context Banner -->
+            <div
+              class="rounded-xl p-6 bg-surface-container-low shadow-sm flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-6"
+            >
+              <div class="flex items-start gap-4 max-w-3xl">
+                <div
+                  class="w-12 h-12 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center flex-shrink-0"
+                >
+                  <span class="material-symbols-outlined text-2xl"
+                    >insights</span
+                  >
+                </div>
+                <div class="space-y-1">
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-headline text-lg font-bold text-on-surface">
+                      Logistics &amp; Spoilage Correlation Advisory
+                    </h3>
+                    <span
+                      class="px-2 py-0.5 rounded-md bg-tertiary-fixed text-on-tertiary-fixed text-xs font-semibold"
+                      >DSS Alert</span
+                    >
+                  </div>
+                  <p
+                    class="font-body text-sm text-on-surface-variant leading-relaxed"
+                  >
+                    Current spoilage reflects
+                    <strong class="text-on-surface"
+                      >13,500 kg (~5.9% to 6.0%)</strong
+                    >
+                    in aggregate shrinkage across 120 consignment dispatches.
+                    Field telemetry correlates 74% of this loss directly with
+                    cold-chain delays along the N1 corridor transit runs.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex flex-wrap lg:flex-nowrap items-center gap-3 flex-shrink-0"
+              >
+                <a
+                  class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-high hover:bg-surface-dim text-on-surface text-xs font-bold uppercase tracking-wider transition-all"
+                  href="#"
+                >
+                  <span class="material-symbols-outlined text-base"
+                    >alt_route</span
+                  >
+                  Supply Chain Modeler
+                </a>
+                <a
+                  class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-fixed hover:bg-primary-fixed-dim text-on-primary-fixed font-bold text-xs uppercase tracking-wider transition-all"
+                  href="#"
+                >
+                  <span class="material-symbols-outlined text-base"
+                    >smart_toy</span
+                  >
+                  Launch AI Dispatch DSS
+                </a>
+              </div>
+            </div>
+            <!-- Looker Studio / DataStudio Embed Shell -->
+            <div
+              class="rounded-2xl p-4 bg-surface-container-lowest shadow-md space-y-3"
+            >
+              <div
+                class="flex flex-col sm:flex-row sm:items-center justify-between px-2 pt-1 pb-2 gap-2"
+              >
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-xl"
+                    >table_chart_view</span
+                  >
+                  <span
+                    class="font-headline text-base font-bold text-on-surface"
+                    >Interactive Agronomic Telemetry Suite</span
+                  >
+                  <span
+                    class="text-xs px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-medium"
+                    >Google Looker Studio Direct</span
+                  >
+                </div>
+                <div
+                  class="flex items-center gap-2 text-xs font-body text-secondary"
+                >
+                  <span
+                    class="material-symbols-outlined text-base text-secondary"
+                    >lock</span
+                  >
+                  <span class="">Encrypted Gateway</span>
+                  <span class="text-outline-variant">•</span>
+                  <button
+                    class="hover:text-on-surface transition-colors flex items-center gap-1 font-semibold"
+                    onclick="
+                      document.getElementById('lookerFrame').requestFullscreen()
+                    "
+                  >
+                    <span class="material-symbols-outlined text-base"
+                      >fullscreen</span
+                    >
+                    Fullscreen
+                  </button>
+                </div>
+              </div>
+              <div
+                class="w-full relative overflow-hidden rounded-xl bg-surface-container"
+              >
+                <iframe
+                  allowfullscreen=""
+                  frameborder="0"
+                  height="820px"
+                  id="lookerFrame"
+                  src="https://datastudio.google.com/embed/reporting/dfe364f7-fa74-44b0-9fe0-0936fc401a38/page/p_bkkpj1v47d"
+                  style="
+                    border: 0px;
+                    border-radius: 12px;
+                    box-shadow: rgba(0, 0, 0, 0.06) 0px 4px 20px;
+                    width: 100%;
+                    min-height: 800px;
+                  "
+                  width="100%"
+                >
+                </iframe>
+              </div>
+            </div>
+            <!-- Operational Detail Cards -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-2">
+              <div
+                class="p-6 rounded-xl bg-surface-container shadow-sm space-y-4"
+              >
+                <div class="flex items-center justify-between">
+                  <h4 class="font-headline font-bold text-lg text-on-surface">
+                    Batch Volume Dispersal
+                  </h4>
+                  <span class="material-symbols-outlined text-secondary"
+                    >pie_chart</span
+                  >
+                </div>
+                <p
+                  class="font-body text-xs text-on-surface-variant leading-relaxed"
+                >
+                  Distribution of the 215.3K kg processed yield across
+                  high-priority regional sorting hubs.
+                </p>
+                <div class="space-y-3 pt-2">
+                  <div>
+                    <div
+                      class="flex justify-between text-xs font-semibold mb-1"
+                    >
+                      <span class="text-on-surface"
+                        >Cape Central Hub (Citrus &amp; Stone)</span
+                      >
+                      <span class="text-secondary">104.2K kg (48.4%)</span>
+                    </div>
+                    <div
+                      class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden"
+                    >
+                      <div
+                        class="h-full bg-primary rounded-full"
+                        style="width: 48.4%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="flex justify-between text-xs font-semibold mb-1"
+                    >
+                      <span class="text-on-surface"
+                        >Limpopo Subtropical Depots</span
+                      >
+                      <span class="text-secondary">68.9K kg (32.0%)</span>
+                    </div>
+                    <div
+                      class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden"
+                    >
+                      <div
+                        class="h-full bg-primary-container rounded-full"
+                        style="width: 32%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="flex justify-between text-xs font-semibold mb-1"
+                    >
+                      <span class="text-on-surface"
+                        >Eastern Coast Cooperative</span
+                      >
+                      <span class="text-secondary">42.2K kg (19.6%)</span>
+                    </div>
+                    <div
+                      class="w-full h-2 rounded-full bg-surface-container-high overflow-hidden"
+                    >
+                      <div
+                        class="h-full bg-tertiary-container rounded-full"
+                        style="width: 19.6%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="p-6 rounded-xl bg-surface-container shadow-sm space-y-4"
+              >
+                <div class="flex items-center justify-between">
+                  <h4 class="font-headline font-bold text-lg text-on-surface">
+                    Cohort Participation
+                  </h4>
+                  <span class="material-symbols-outlined text-secondary"
+                    >badge</span
+                  >
+                </div>
+                <p
+                  class="font-body text-xs text-on-surface-variant leading-relaxed"
+                >
+                  Farmer active cohorts delivering sustained crop loads during
+                  current cycle.
+                </p>
+                <div class="grid grid-cols-2 gap-3 pt-1">
+                  <div class="p-3.5 rounded-lg bg-surface-container-lowest">
+                    <span
+                      class="text-xs font-bold text-secondary uppercase block"
+                      >Tier 1 Growers</span
+                    >
+                    <span
+                      class="font-headline text-2xl font-bold text-on-surface"
+                      >18</span
+                    >
+                    <span class="text-[11px] text-primary block mt-0.5"
+                      >Yield &gt; 8,000 kg</span
+                    >
+                  </div>
+                  <div class="p-3.5 rounded-lg bg-surface-container-lowest">
+                    <span
+                      class="text-xs font-bold text-secondary uppercase block"
+                      >Emergent Growers</span
+                    >
+                    <span
+                      class="font-headline text-2xl font-bold text-on-surface"
+                      >12</span
+                    >
+                    <span class="text-[11px] text-tertiary block mt-0.5"
+                      >Micro-irrigation test</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="p-3 rounded-lg bg-primary-fixed/30 text-on-surface text-xs leading-relaxed"
+                >
+                  <strong class="font-semibold text-primary"
+                    >Agronomy Field note:</strong
+                  >
+                  All 30 farmers completed global GAP documentation audit on
+                  schedule.
+                </div>
+              </div>
+              <div
+                class="p-6 rounded-xl bg-surface-container shadow-sm space-y-4"
+              >
+                <div class="flex items-center justify-between">
+                  <h4 class="font-headline font-bold text-lg text-on-surface">
+                    Transit Spoilage Remediation
+                  </h4>
+                  <span class="material-symbols-outlined text-secondary"
+                    >local_shipping</span
+                  >
+                </div>
+                <p
+                  class="font-body text-xs text-on-surface-variant leading-relaxed"
+                >
+                  Key DSS actionables recommended to curtail the 13.5K kg spoil
+                  rate below 3.5%.
+                </p>
+                <div class="space-y-2.5 pt-1">
+                  <div
+                    class="flex items-start gap-2.5 text-xs text-on-surface-variant"
+                  >
+                    <span
+                      class="material-symbols-outlined text-base text-primary flex-shrink-0 mt-0.5"
+                      >check_circle</span
+                    >
+                    <span class=""
+                      >Reroute N1 peak-hour transfers to night freight
+                      scheduling.</span
+                    >
+                  </div>
+                  <div
+                    class="flex items-start gap-2.5 text-xs text-on-surface-variant"
+                  >
+                    <span
+                      class="material-symbols-outlined text-base text-primary flex-shrink-0 mt-0.5"
+                      >check_circle</span
+                    >
+                    <span class=""
+                      >Deploy calibrated Bluetooth data loggers into batch bins
+                      78–120.</span
+                    >
+                  </div>
+                  <div
+                    class="flex items-start gap-2.5 text-xs text-on-surface-variant"
+                  >
+                    <span
+                      class="material-symbols-outlined text-base text-primary flex-shrink-0 mt-0.5"
+                      >check_circle</span
+                    >
+                    <span class=""
+                      >Trigger pre-cooling protocol standard at field collection
+                      hubs.</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          document
+            .getElementById("refreshFeedBtn")
+            ?.addEventListener("click", function () {
+              const frame = document.getElementById("lookerFrame");
+              if (frame) {
+                const src = frame.src;
+                frame.src = "";
+                setTimeout(() => {
+                  frame.src = src;
+                }, 150);
+              }
+            });
+
+          document
+            .getElementById("exportCsvBtn")
+            ?.addEventListener("click", function () {
+              const csvContent =
+                "data:text/csv;charset=utf-8," +
+                "Metric,Value,Unit\n" +
+                "Total Yield,228.8,K kg\n" +
+                "Total Processed,215.3,K kg\n" +
+                "Spoilage,13.5,K kg\n" +
+                "Revenue,12.6,M ZAR\n" +
+                "Number of Farmers,30.0,Count\n" +
+                "Number of Batches,120.0,Count\n";
+              const encodedUri = encodeURI(csvContent);
+              const link = document.createElement("a");
+              link.setAttribute("href", encodedUri);
+              link.setAttribute(
+                "download",
+                "agrierp_farmer_summary_analytics.csv",
+              );
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            });
+        </script>
+        <footer
+          class="mt-16 pt-8 pb-10 border-t border-surface-container-high text-xs text-on-surface-variant flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              class="w-7 h-7 rounded-lg bg-primary-fixed flex items-center justify-center text-on-primary-fixed"
+            >
+              <span class="material-symbols-outlined text-sm">agriculture</span>
+            </div>
+            <span class="font-headline font-semibold text-on-surface"
+              >AgriERP Core Telemetry &amp; Knowledge Console</span
+            >
+          </div>
+          <p class="font-body text-secondary text-center sm:text-right">
+            Enterprise Resource Planning • Live Field Decision Support System
+          </p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
